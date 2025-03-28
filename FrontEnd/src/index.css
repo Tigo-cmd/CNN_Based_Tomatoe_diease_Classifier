@@ -1,0 +1,118 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 20% 2%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 20% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 20% 4%;
+
+    --primary: 142 72% 29%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 215 25% 95%;
+    --secondary-foreground: 220 20% 20%;
+
+    --muted: 215 25% 92%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 142 72% 95%;
+    --accent-foreground: 142 72% 29%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 32% 88%;
+    --input: 215 32% 86%;
+    --ring: 142 72% 29%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 20% 4%;
+    --foreground: 210 20% 98%;
+
+    --card: 222 20% 5%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 222 20% 5%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 142 70% 40%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 25% 12%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 217 25% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 142 70% 15%;
+    --accent-foreground: 210 20% 90%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 25% 20%;
+    --input: 217 25% 25%;
+    --ring: 142 70% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-md backdrop-saturate-150 border border-white/20;
+  }
+  
+  .glass-card {
+    @apply glass-effect rounded-2xl shadow-sm;
+  }
+}
+
+/* Animate elements when they enter the viewport */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Import Inter variable font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
