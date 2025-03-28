@@ -34,7 +34,7 @@ const sampleDiseases: Record<string, Disease> = {
 // console.log(workerId);
 
 // const BACKEND_URL_KEY = 'tomato_classifier_backend_url';
-const DEFAULT_URL = 'http://127.0.0.1:10000/predict';
+const DEFAULT_URL = 'https://cnn-classifier-api-server.onrender.com/predict';
 
 
 const TomatoClassifier: React.FC = () => {

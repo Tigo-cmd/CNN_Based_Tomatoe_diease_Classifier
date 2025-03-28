@@ -45,7 +45,7 @@ const ChatWidget: React.FC = () => {
 
     try {
       // Send message to backend
-      const response = await fetch('http://127.0.0.1:10000/chat', {
+      const response = await fetch('https://cnn-classifier-api-server.onrender.com/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message }),
