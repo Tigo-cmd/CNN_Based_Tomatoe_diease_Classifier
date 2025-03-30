@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { MessageCircle, X, ArrowUp, Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Default_Url_chat } from './URL';
 
 interface Message {
   id: string;
@@ -45,7 +46,7 @@ const ChatWidget: React.FC = () => {
 
     try {
       // Send message to backend
-      const response = await fetch('https://cnn-classifier-api-server.onrender.com/chat', {
+      const response = await fetch(Default_Url_chat, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message }),

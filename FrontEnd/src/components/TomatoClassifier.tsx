@@ -5,6 +5,7 @@ import DiseaseResult, { Disease } from './DiseaseResult';
 import { useToast } from "@/hooks/use-toast";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Camera, Upload } from 'lucide-react';
+import {Default_Url_predict} from './URL.tsx'
 // import { InferenceEngine } from "inferencejs";
 // const inferEngine = new InferenceEngine();
 
@@ -34,7 +35,6 @@ const sampleDiseases: Record<string, Disease> = {
 // console.log(workerId);
 
 // const BACKEND_URL_KEY = 'tomato_classifier_backend_url';
-const DEFAULT_URL = 'https://cnn-classifier-api-server.onrender.com/predict';
 
 
 const TomatoClassifier: React.FC = () => {
@@ -54,7 +54,7 @@ const TomatoClassifier: React.FC = () => {
     
      try {
       // Get the current backend URL
-      const apiUrl = DEFAULT_URL;
+      const apiUrl = Default_Url_predict;
       
       // Create form data for API
       const formData = new FormData();
@@ -133,7 +133,7 @@ const TomatoClassifier: React.FC = () => {
     
     try {
       // Get the current backend URL
-      const apiUrl = DEFAULT_URL;
+      const apiUrl = Default_Url_predict;
       
       // Convert base64 to blob
       const response = await fetch(imageData);
