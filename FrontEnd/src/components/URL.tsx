@@ -3,5 +3,5 @@
 
 
 
-export const Default_Url_predict = "https://optimal-hebrew-properly-dedicated.trycloudflare.com/predict";
-export const Default_Url_chat = "https://optimal-hebrew-properly-dedicated.trycloudflare.com/chat";
+export const Default_Url_predict = "https://tribune-relates-newport-experienced.trycloudflare.com/predict";
+export const Default_Url_chat = "https://tribune-relates-newport-experienced.trycloudflare.com/chat";
