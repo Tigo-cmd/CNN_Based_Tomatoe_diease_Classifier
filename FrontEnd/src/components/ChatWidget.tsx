@@ -5,6 +5,9 @@ import { MessageCircle, X, ArrowUp, Check } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Default_Url_chat } from './URL';
 
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
 interface Message {
   id: string;
   content: string;
@@ -117,7 +120,16 @@ const ChatWidget: React.FC = () => {
                 msg.isUser ? 'bg-primary text-primary-foreground ml-auto' : 'bg-muted text-foreground'
               )}
             >
-              <p className="text-sm break-words">{msg.content}</p>
+              <div
+                className={cn(
+                  "text-sm break-words prose prose-sm max-w-none",
+                  msg.isUser ? "prose-invert text-primary-foreground" : "text-foreground prose-p:leading-relaxed"
+                )}
+              >
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {msg.content}
+                </ReactMarkdown>
+              </div>
               <p className="text-xs mt-1 opacity-70">
                 {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 {msg.isUser && <Check className="inline ml-1 h-3 w-3" />}
