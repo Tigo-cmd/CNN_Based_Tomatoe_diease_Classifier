@@ -3,5 +3,5 @@
 
 
 
-export const Default_Url_predict = "https://tribune-relates-newport-experienced.trycloudflare.com/predict";
-export const Default_Url_chat = "https://tribune-relates-newport-experienced.trycloudflare.com/chat";
+export const Default_Url_predict = "https://https://bennett-blue-deer-preference.trycloudflare.com/predict";
+export const Default_Url_chat = "https://https://bennett-blue-deer-preference.trycloudflare.com/chat";
